@@ -1,4 +1,4 @@
-import SearchHeader from "./SearchHeader";
+import SearchHeader from "../../components/SearchHeader.jsx";
 import "./../globals.css";
 
 const layout = ({ children }) => {
