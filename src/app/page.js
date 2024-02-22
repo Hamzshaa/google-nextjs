@@ -13,6 +13,7 @@ const page = () => {
           height="100"
           priority
           alt="google logo"
+          style={{ width: "auto" }}
         />
         <HomeSearch />
       </div>
