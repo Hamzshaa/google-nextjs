@@ -1,4 +1,5 @@
 import Link from "next/link";
+import WebSearchResults from "@/components/WebSearchResults";
 
 const WebSearchPage = async ({ searchParams }) => {
   const response = await fetch(
@@ -27,9 +28,7 @@ const WebSearchPage = async ({ searchParams }) => {
   }
 
   return (
-    <div className="">
-      {results && results.map((result) => <h1>{result.title}</h1>)}
-    </div>
+    <div className="">{results && <WebSearchResults results={data} />}</div>
   );
 };
 
