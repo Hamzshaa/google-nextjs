@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-const CountryLocal = () => {
-  const [country, setCountry] = useState("Madagascar");
+export default function CountryLookup() {
+  const [country, setCountry] = useState('United States');
 
   useEffect(() => {
     const getCountry = async () => {
@@ -11,15 +11,12 @@ const CountryLocal = () => {
         `https://extreme-ip-lookup.com/json/?key=${process.env.NEXT_PUBLIC_IP_API_KEY}`
       )
         .then((res) => res.json())
-        .then((data) => setCountry(data.country))
-        .catch((e) => console.log(e.message));
+        .then((data) => data.country);
       if (!response) return;
+      setCountry(response);
     };
-
     getCountry();
   }, []);
 
   return <div>{country}</div>;
-};
-
-export default CountryLocal;
+}
